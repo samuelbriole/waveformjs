@@ -41,8 +41,10 @@
         %li <a href="#functions">Functions</a>
         %li <a href="#endpoint">Endpoint</a>
       %h4 <a href="#examples">Examples</a>
-      //%ul
-      //%li <a href="#interpolation">Interpolation</a>
+      %ul
+        %li <a href="#track">Track</a>
+        %li <a href="#fly">On the Fly</a>
+        %li <a href="#weird">Weird</a>
 
     // CONTENT
     %section
@@ -115,7 +117,8 @@
       %a(name="examples")
         %h2 Examples
 
-      %h3 Hooking up a waveform to a SoundCloud track
+      %a(name="track")
+        %h3 Hooking up a waveform to a SoundCloud track
       #example2.example-waveform
       %p
         Using the <code>dataFromSoundCloudTrack</code> the data of the waveform will be pulled from the endpoint on waveform.js.org that converts the SoundCloud waveform image into the floats.
@@ -140,7 +143,8 @@
           });
         });
 
-      %h3 Drawing a waveform with a gradient on the fly
+      %a(name="fly")
+        %h3 Drawing a waveform with a gradient on the fly
       #example4.example-waveform
       %p
         When the <code>interpolate</code> option is false, each data sample will be drawn on one pixel.
@@ -169,7 +173,8 @@
           });
         }, 50);
 
-      %h3 Weird customized waveform with random colors
+      %a(name="weird")
+        %h3 Weird customized waveform with random colors
       #example1.example-waveform
       %p
         In this example the data is set manually to just a few samples, which will be interpolated to the full width.
