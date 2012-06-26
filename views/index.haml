@@ -3,6 +3,8 @@
   %head
     %title Waveform.js
 
+    %link(rel="shortcut icon" href="/favicon.ico")
+
     %meta(content="Waveform.js" property="og:title")
     %meta(content="Waveform.js makes drawing SoundCloud waveforms simple and lets you style and color them the way you want." property="og:description")
     %meta(content="website" property="og:type")
@@ -24,7 +26,6 @@
 
       %ul
         %li <a href="http://github.com/soundcloud/waveform.js" target="_blank">Github Repository</a>
-        /%li Annotated Source
 
       %h4 <a href="#top">Introduction</a>
 
@@ -42,15 +43,9 @@
       %a(name="top")
         %h1 Waveform.js <div id="logo"></div>
 
-<<<<<<< HEAD
-      %p Waveform.js makes drawing <a href="http://soundcloud.com">SoundCloud</a> waveforms simple and lets you <strong>style</strong> and <strong>color</strong> them the way you want. It comes as a small JavaScript <strong>library</strong> and is using a <em>lightweight service</em> hosted on <a href="http://waveformjs.org">waveformjs.org</a> that translates the waveform image provided by SoundCloud into an <strong>array</strong> of <strong>floating points</strong>.
-=======
       %p Waveform.js makes drawing <a href="http://soundcloud.com">SoundCloud</a> waveforms simple and lets you <strong>style</strong> and <strong>color</strong> them the way you want them. It comes as a small JavaScript <strong>library</strong> and is using a <em>lightweight service</em> hosted on <a href="http://waveformjs.org">waveformjs.org</a> that translates the waveform images provided by SoundCloud into <strong>floating points</strong>.
+      %em "Damn Good Waveforms" - Eric Wahlforss, CTO of SoundCloud
 
-      %pre
-        <em>"Damn Good Waveforms"</em> (Eric Wahlforss, CTO of SoundCloud)
-
->>>>>>> 519530f4fcc90b483a7a23df386af8a9277773ef
       %p The project is open source and <a href="http://github.com/soundcloud/waveform.js">hosted on Github</a>. This page provides all the documentation you'll need as well as a list of <a href="#examples">examples</a>. Waveform.js is available to use under the <a href="#">MIT software license</a>. It was written by <a href="https://twitter.com/intent/user?screen_name=johanneswagener">Johannes Wagener</a> and <a href="https://twitter.com/intent/user?screen_name=leemartin">Lee Martin</a>.
       %p You can report <strong>bugs</strong> and discuss <strong>features</strong> on the <a href="http://github.com/soundcloud/waveform.js/issues">Github issues page</a>.
       %p Follow <a href="https://twitter.com/intent/user?screen_name=waveformjs">@waveformjs</a> for the latest.
@@ -59,18 +54,19 @@
         %h2 Examples
 
       %h3 A SoundCloud waveform
-      #example2.example-waveform
+      #example2.example-waveform(style="height:100px;width:500px")
       :example
         $.getJSON("http://waveformjs.org/w?callback=?", {
-          url: "http://w1.sndcdn.com/EQyi2vpPOMvG_m.png",
+          url: "https://w1.sndcdn.com/cWHNerOLlkUq_m.png",
         }, function(d){
 
           new Waveform({
             container: document.getElementById("example2"),
-            innerColor: "#333",
+            innerColor: "#81D8D0",
             data: d
           });
         });
+
       %h3 A custom, rainbow colored waveform
       #example1.example-waveform
       :example
@@ -81,6 +77,7 @@
           },
           data: [1, 0.5, 1, 0],
         });
+
       %h3 SoundCloud waveform with play and loading states.
       #example3.example-waveform
       :example
@@ -91,6 +88,7 @@
           },
           data: [1, 0.5, 1, 0],
         });
+
       %h3 A growing waveform
       #example4.example-waveform
       :example
@@ -107,19 +105,15 @@
             data: data
           });
         }, 50);
+
       %h2 Downloads <em>(Right-click, and use "Save As")</em>
-<<<<<<< HEAD
 
       %table#downloads
         %tr
           %td
-            %a.button(href="/waveform.js") Development Version (1.0.0)
+            %a.button(href="/waveform.js") Latest Version (1.0.0)
           %td
             %em 5kb, Full source
-=======
-      %p
-        %a.button(href="/waveform.js") Latest Version (1.0.0)
->>>>>>> 519530f4fcc90b483a7a23df386af8a9277773ef
 
       %a(name="usage")
         %h2 Usage
