@@ -31,7 +31,8 @@ window.Waveform = class Waveform
     @setData @expandArray(data, @width)
 
   update: (options) ->
-    @interpolate = false if options.interpolate?
+    if options.interpolate?
+      @interpolate = options.interpolate
     if @interpolate == false
       @setDataCropped(options.data)
     else
