@@ -59,10 +59,10 @@ p
   line-height: 20px
   margin: 25px 0
 
-code, pre
+code, pre, dt, script.example
   font: 12px Monaco, Consolas, "Lucida Console", monospace
 
-code
+code, dt
   background: white
   border: 1px solid #DDD
   padding: 0px 3px
@@ -72,7 +72,7 @@ pre, script.example
   border-style: solid
   border-width: 0 4px
   padding: 2px 0 2px 15px
-  font: 11px Monaco, Consolas, "Lucida Console", monospace
+  //font: 11px Monaco, Consolas, "Lucida Console", monospace
 
 nav
   background: white
@@ -101,6 +101,14 @@ section
   position: relative
   margin: 0 0 50px 280px
   width: 550px
+
+  dl
+    dt
+      clear: left
+      float: left
+    dd
+      margin-left: 100px
+      padding-bottom: 20px
 
 a.button
   background-color: white
