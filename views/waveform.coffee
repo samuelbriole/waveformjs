@@ -70,7 +70,7 @@ window.Waveform = class Waveform
   createCanvas: (container, width, height) ->
     canvas = document.createElement("canvas")
     container.appendChild(canvas)
-    canvas.width  = width 
+    canvas.width  = width
     canvas.height = height
     canvas
 
@@ -123,7 +123,7 @@ window.Waveform = class Waveform
     }
 
   dataFromSoundCloudTrack: (track) ->
-    JSONP.get "http://waveformjs.org/w", {url: track.waveform_url}, (data) =>
+    JSONP.get "http://www.waveformjs.org/w", {url: track.waveform_url}, (data) =>
       @update
         data: data
 
