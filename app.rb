@@ -6,6 +6,7 @@ require 'RMagick'
 require 'json'
 require 'coffee-script'
 require 'dalli'
+require 'memcachier'
 require 'sass'
 require 'compass'
 
