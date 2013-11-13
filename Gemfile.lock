@@ -18,7 +18,7 @@ GEM
     json (1.6.5)
     multi_json (1.1.0)
     rack (1.2.1)
-    rmagick (2.12.0)
+    rmagick (2.13.2)
     sass (3.1.19)
     sinatra (1.2.6)
       rack (~> 1.1)
