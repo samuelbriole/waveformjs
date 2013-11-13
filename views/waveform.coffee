@@ -41,7 +41,10 @@ window.Waveform = class Waveform
 
   redraw: () =>
     @clear()
-    @context.fillStyle = @innerColor
+    if typeof(@innerColor) == "function"
+      @context.fillStyle = @innerColor()
+    else 
+      @context.fillStyle = @innerColor
     middle = @height / 2
     i = 0
     for d in @data
