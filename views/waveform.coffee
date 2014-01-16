@@ -43,7 +43,7 @@ window.Waveform = class Waveform
     @clear()
     if typeof(@innerColor) == "function"
       @context.fillStyle = @innerColor()
-    else 
+    else
       @context.fillStyle = @innerColor
     middle = @height / 2
     i = 0
@@ -131,6 +131,7 @@ window.Waveform = class Waveform
         data: data
 
 # Lightweight JSONP fetcher, Copyright 2010-2012 Erik Karlsson. All rights reserved, BSD licensed
+# https://github.com/IntoMethod/Lightweight-JSONP/blob/master/jsonp.js
 JSONP = (->
   load = (url) ->
     script = document.createElement("script")
@@ -149,18 +150,22 @@ JSONP = (->
     encodeURIComponent str
   jsonp = (url, params, callback, callbackName) ->
     query = (if (url or "").indexOf("?") is -1 then "?" else "&")
+
+    callbackName = callbackName or config["callbackName"] or "callback"
+    uniqueName = callbackName + "_json" + (++counter)
+
     params = params or {}
     for key of params
       query += encode(key) + "=" + encode(params[key]) + "&"  if params.hasOwnProperty(key)
-    jsonp = "json" + (++counter)
-    window[jsonp] = (data) ->
+
+    window[uniqueName] = (data) ->
       callback data
       try
-        delete window[jsonp]
-      window[jsonp] = null
+        delete window[uniqueName]
+      window[uniqueName] = null
 
-    load url + query + (callbackName or config["callbackName"] or "callback") + "=" + jsonp
-    jsonp
+    load url + query + callbackName + "=" + uniqueName
+    uniqueName
   setDefaults = (obj) ->
     config = obj
   counter = 0
